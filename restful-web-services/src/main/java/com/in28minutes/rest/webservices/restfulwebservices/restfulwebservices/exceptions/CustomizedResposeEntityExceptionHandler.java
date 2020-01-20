@@ -1,5 +1,6 @@
 package com.in28minutes.rest.webservices.restfulwebservices.restfulwebservices.exceptions;
 
+import com.in28minutes.rest.webservices.restfulwebservices.restfulwebservices.user.UserAlreadyExistException;
 import com.in28minutes.rest.webservices.restfulwebservices.restfulwebservices.user.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,4 +26,11 @@ public class CustomizedResposeEntityExceptionHandler extends ResponseEntityExcep
     public final ResponseEntity<Object> handleUserNotFoundException(UserNotFoundException ex, WebRequest request) throws Exception {
         ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(), request.getDescription(false));
         return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
-    }}
+    }
+
+    @ExceptionHandler(UserAlreadyExistException.class)
+    public final ResponseEntity<Object> handleUserAlreadyExistException(UserAlreadyExistException ex, WebRequest request) throws Exception {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(), request.getDescription(false));
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
+    }
+}
