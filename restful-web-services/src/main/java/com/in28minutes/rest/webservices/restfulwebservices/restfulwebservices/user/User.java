@@ -4,7 +4,7 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
-public class User {
+public class User{
 
     private Integer id;
 
