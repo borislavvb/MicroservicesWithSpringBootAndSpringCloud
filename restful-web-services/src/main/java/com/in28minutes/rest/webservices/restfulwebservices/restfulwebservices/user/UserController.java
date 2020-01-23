@@ -1,7 +1,6 @@
 package com.in28minutes.rest.webservices.restfulwebservices.restfulwebservices.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.hateoas.server.mvc.ControllerLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -9,8 +8,6 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
-import static org.springframework.hateoas.server.mvc.ControllerLinkBuilder.linkTo;
-import static org.springframework.hateoas.server.mvc.ControllerLinkBuilder.methodOn;
 
 @RestController
 public class UserController {
